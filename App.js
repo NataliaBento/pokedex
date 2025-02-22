@@ -1,8 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, ScrollView, View } from 'react-native';
 
 // Imports dos meus componentes
-import NavBarTop from './src/components/NavBarTop';
+import NavBarTop from './src/components/NavBarTop/NavBarTop';
+import ViaCEP from './src/components/ViaCEP/ViaCEP';
 
 export default function App() {
   return (
@@ -14,7 +15,14 @@ export default function App() {
               </View>
               {/* // ViewContent */}
               <View id="conteudo" style={styles.viewContent}>
-                  <Text>Conteúdo</Text>
+                  <ScrollView>
+                    <View style={styles.viewForm}>
+                    <ViaCEP></ViaCEP>
+                    </View>
+                    <View style={styles.viewPokemon}>
+                    <Text>shalalalala</Text>
+                    </View>
+                  </ScrollView>
               </View>
           </View>
       </>
@@ -33,6 +41,17 @@ const styles = StyleSheet.create({
         padding: 20,
         width: 'auto'
     },
+    viewForm:{
+        backgroundColor: "pink",
+        borderBottomWidth: 20,
+        borderStyle: "dotted",
+        borderWidth: 4
+    },
+    viewPokemon:{
+        backgroundColor: "blue",
+        borderStyle: "dotted",
+        borderWidth: 4,
+    },
     viewTop: {
         alignItems: "center",
         backgroundColor: "green",
@@ -47,5 +66,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: "top",
+        padding: "20"
     },
+
 });

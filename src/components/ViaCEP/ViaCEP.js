@@ -1,12 +1,20 @@
-import react from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { StyleSheet, Text, View, TextInput } from "react-native";
 
 export default function ViaCEP() {
+    const [inputTextValue, onChangeText] = React.useState('');
+
     return (
         <>
             <View style={styles.viewViaCEP}>
                 <View style={styles.viewViaCEPForm}>
-                    <input type="text"></input>
+                    <TextInput
+                        style={styles.inputText}
+                        onChangeText={onChangeText} 
+                        value={inputTextValue}
+                        placeholder="Insra valor"
+                    >
+                    </TextInput>
                     <input type="button"></input>
                 </View>
                 <View style={styles.viewViaCEPReturn}>
@@ -40,4 +48,10 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: "top",
     },
+    inputText:{
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+    }
 });
