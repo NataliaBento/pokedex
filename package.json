@@ -3,20 +3,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && expo start",
+    "android": "set NODE_OPTIONS=--openssl-legacy-provider && expo start --android",
+    "ios": "set NODE_OPTIONS=--openssl-legacy-provider && expo start --ios",
+    "web": "set NODE_OPTIONS=--openssl-legacy-provider && expo start --web"
   },
   "dependencies": {
+    "@expo/metro-runtime": "~4.0.1",
     "expo": "~52.0.37",
     "expo-status-bar": "~2.0.1",
     "pokedex": "file:",
     "react": "18.3.1",
-    "react-native": "0.76.7"
+    "react-dom": "18.3.1",
+    "react-native": "0.76.7",
+    "react-native-web": "~0.19.13"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "private": true
+  "private": true,
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
